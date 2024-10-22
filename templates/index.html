@@ -10,11 +10,22 @@
 
 <style>
     body {
-        background-color: #264653;
-        max-width: 1200px;
+        background-color: #222831;
+        max-width: 370px;
         margin: 0 auto;
+        color: #EEEEEE;
+        
     }
 
+    span {
+        display: flex;
+        padding-top: 20px;
+    }
+
+    .link-create {
+        text-decoration: none;
+        background-color: #00ADB5;
+    }
 
     .title {
         font-size: 30px;
@@ -63,7 +74,7 @@
         height: 150px;
         overflow : auto;
         word-wrap: break-word;
-        max-width: 460px;
+        max-width: 360px;
     }
 
     .description-component p::-webkit-scrollbar {
@@ -79,8 +90,8 @@
     }
 
     .edit {
-        background-color: blue;
-        width: 200px;
+        background-color: #00ADB5;
+        width: 100px;
         padding: 5px;
         display: flex;
         align-items: center;
@@ -90,8 +101,8 @@
     }
 
     .delete {
-        background-color: red;
-        width: 200px;
+        background-color: #FF2E63;
+        width: 100px;
         padding: 5px;
         display: flex;
         align-items: center;
@@ -102,9 +113,11 @@
 </style>
 
 <body>
-  <main  class=" min-h-screen p-5 w-full max-w-full">
-      <a class=" bg-slate-500  text-white font-bold py-2 px-4 rounded " href="{{ url_for('create') }}">+ Create New Item</a>
-      <h1 class="title">Item List</h1>
+  <main  class=" min-h-screen  w-full max-w-full">
+     <span>
+         <a class=" link-create  text-white font-bold py-2 px-4 rounded " href="{{ url_for('create') }}">+ Create New Item</a>
+    </span>
+         <h1 class="title">Item List</h1>
       <section class="root-component flex flex-col gap-5">
           {% for item in items %}
           <dl class=" flex  gap-2 flex-col w-full">
