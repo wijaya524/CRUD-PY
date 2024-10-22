@@ -10,8 +10,11 @@
 
 <style>
     body {
-        background-color: #ffff;
+        background-color: #264653;
+        max-width: 1200px;
+        margin: 0 auto;
     }
+
 
     .title {
         font-size: 30px;
@@ -25,6 +28,7 @@
         flex-wrap: wrap;
         gap: 20px;
         padding-top: 30px;
+        max-width: 100%;
     }
 
     .name-component {
@@ -41,9 +45,10 @@
         font-size: 20px;
         font-weight: 500;
     }
-
+    
     .description-component {
         display: flex;
+        flex-direction: column;
         gap: 10px;
     }
 
@@ -55,15 +60,27 @@
     .description-component p {
         font-size: 20px;
         font-weight: 500;
+        height: 150px;
+        overflow : auto;
+        word-wrap: break-word;
+        max-width: 460px;
+    }
+
+    .description-component p::-webkit-scrollbar {
+        display: none;
     }
 
     .parents-action {
         display: flex;
+        padding-top: 20px;
         gap: 6px;
+        align-items: center;
+        justify-content: center;
     }
 
     .edit {
-        background-color: aqua;
+        background-color: blue;
+        width: 200px;
         padding: 5px;
         display: flex;
         align-items: center;
@@ -74,6 +91,7 @@
 
     .delete {
         background-color: red;
+        width: 200px;
         padding: 5px;
         display: flex;
         align-items: center;
@@ -84,12 +102,12 @@
 </style>
 
 <body>
-  <main  class=" min-h-screen p-5 w-full ">
+  <main  class=" min-h-screen p-5 w-full max-w-full">
       <a class=" bg-slate-500  text-white font-bold py-2 px-4 rounded " href="{{ url_for('create') }}">+ Create New Item</a>
       <h1 class="title">Item List</h1>
       <section class="root-component flex flex-col gap-5">
           {% for item in items %}
-          <dl class=" flex items-center gap-2 flex-col w-full">
+          <dl class=" flex  gap-2 flex-col w-full">
             <div class=" " >
                 <dt class="name-component">
                     <h1 >Nama </h1>: 
@@ -98,9 +116,9 @@
                 </p>
             </dt>
             <dd class="description-component">
-                <h1>Deskripsi</h1> :
+                <h1>Deskripsi:</h1> 
                 <p>
-                    {{ item.description }} 
+                  {{ item.description }} 
                 </p>
             </dd>
             </div>
