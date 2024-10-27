@@ -30,7 +30,7 @@
     }
 
     .title {
-        font-size: 30px;
+        font-size: 40px;
         text-align: center;
         font-weight: 500;
         padding-top: 60px;
@@ -164,7 +164,9 @@
 
         @media (min-width: 1024px) {
             main {
-                padding: 20px;
+                padding-top: 20px;
+                padding-left: 40px;
+                padding-right: 40px;
             }
 
             .parent-content {
@@ -180,7 +182,7 @@
 </style>
 
 <body>
-    <main class=" min-h-screen  w-full max-w-full">
+    <main class=" min-h-screen   w-full max-w-full">
         <span>
             <a class=" link-create  text-white font-bold py-2 px-4 rounded " href="{{ url_for('create') }}">+ Create New
                 Item</a>
